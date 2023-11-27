@@ -10,6 +10,8 @@ const app = express()
 
 const {PORT} = require ('./constants')
 
+//initializa middleware
+app.use(express.json())
 
 //import routes
 
