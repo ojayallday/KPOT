@@ -4,6 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const express = require('express')
+const app = express()
+
+//APP start
+
+const appStart = () => {
+  try {
+    app.listen(PORT, () => {
+      console.log(`The app is running on https://localhost:${PORT}`)
+    })
+  } catch (error){
+    console.log(`Error: ${error.message}`)
+
+  }
+}
+
+appStart()
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
