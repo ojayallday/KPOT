@@ -1,48 +1,36 @@
-/*import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-*/
+
 
 const express = require('express')
 const app = express()
+const { PORT, CLIENT_URL } = require('./constants')
+const cookieParser = require('cookie-parser')
+const passport = require('passport')
+const cors = require('cors')
 
-const {PORT} = require ('./constants')
+//import passport middleware
+require('./middlewares/passport-middleware')
 
-//initialize middleware
+//initialize middlewares
 app.use(express.json())
+app.use(cookieParser())
+app.use(cors({ origin: CLIENT_URL, credentials: true }))
+app.use(passport.initialize())
 
 //import routes
-
 const authRoutes = require('./routes/auth')
 
-//initialize routes 
+//initialize routes
 app.use('/api', authRoutes)
-//APP start
 
+//app start
 const appStart = () => {
   try {
     app.listen(PORT, () => {
-      console.log(`The app is running on https://localhost:${PORT}`)
+      console.log(`The app is running at http://localhost:${PORT}`)
     })
-  } catch (error){
+  } catch (error) {
     console.log(`Error: ${error.message}`)
-
   }
 }
 
 appStart()
-
-/*
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals(); */
