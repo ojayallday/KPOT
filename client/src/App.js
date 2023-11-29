@@ -1,29 +1,26 @@
-import { 
+import {
   BrowserRouter,
   Navigate,
   Routes,
   Route,
   Outlet,
-
- } from "react-router-dom";
-import Home from "./pages/home";
-import Dashboard from "./pages/dashboard";
-import Register from "./pages/register";
-import Login from "./pages/login";
-
-
+} from 'react-router-dom'
+import Dashboard from './pages/dashboard'
+import Home from './pages/home'
+import Login from './pages/login'
+import Register from './pages/register'
+import { useSelector } from 'react-redux'
 
 const PrivateRoutes = () => {
-  const isAuth = false 
+  const { isAuth } = useSelector((state) => state.auth)
 
-  return <>{isAuth ? <Outlet/> : <Navigate to= '/login'/> }</>
+  return <>{isAuth ? <Outlet /> : <Navigate to='/login' />}</>
 }
 
-
 const RestrictedRoutes = () => {
-  const isAuth =false 
+  const { isAuth } = useSelector((state) => state.auth)
 
-  return <>{!isAuth ? <Outlet/> : <Navigate to= '/dashboard'/> }</>
+  return <>{!isAuth ? <Outlet /> : <Navigate to='/dashboard' />}</>
 }
 
 const App = () => {
@@ -45,5 +42,4 @@ const App = () => {
   )
 }
 
-
-export default App;
+export default App
