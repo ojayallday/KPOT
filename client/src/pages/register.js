@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Layout from "../components/layout";
+import { onRegistration } from "../api/auth";
 
 const Register = () => {
     const [values, setValues] =useState ({
@@ -9,17 +10,27 @@ const Register = () => {
     })
 
     const [error, setError] = useState(false)
-    const [success, setSucess] = useState(false)
+    const [success, setSuccess] = useState(false)
 
     const onChange = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value })
 
     }
 
-    const onSubmit = (e) => {
-
+    const onSubmit = async (e) => {
         e.preventDefault()
-    }
+    
+        try {
+          const { data } = await onRegistration(values)
+    
+          setError('')
+          setSuccess(data.message)
+          setValues({ email: '', password: '' })
+        } catch (error) {
+          setError(error.response.data.errors[0].msg)
+          setSuccess('')
+        }
+      }
 
     return (
         <Layout>
