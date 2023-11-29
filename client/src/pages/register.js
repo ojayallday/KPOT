@@ -1,6 +1,12 @@
+import Layout from "../components/layout";
+
 const Register = () => {
 
-    return <div> <h1>Register</h1></div>
+    return (
+        <Layout>
+             <h1>Register</h1>
+        </Layout>
+    )
   }
   
   export default Register;

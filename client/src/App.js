@@ -12,8 +12,9 @@ import Register from "./pages/register";
 import Login from "./pages/login";
 
 
+
 const PrivateRoutes = () => {
-  const isAuth =false 
+  const isAuth = false 
 
   return <>{isAuth ? <Outlet/> : <Navigate to= '/login'/> }</>
 }
@@ -26,25 +27,23 @@ const RestrictedRoutes = () => {
 }
 
 const App = () => {
-
   return (
     <BrowserRouter>
-    <Routes>
-      <Route path= '/' element = {<Home />}/>
+      <Routes>
+        <Route path='/' element={<Home />} />
 
-      <Route element = {<PrivateRoutes/>}>
-        <Route path= '/dashboard' element = {<Dashboard />}/>
+        <Route element={<PrivateRoutes />}>
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
 
-      </Route>
-      <Route element = {<RestrictedRoutes/>}>
-        <Route path= '/register' element = {<Register />}/>
-        <Route path= '/login' element = {<Login />}/>
-
-      </Route>
-      
-    </Routes>
+        <Route element={<RestrictedRoutes />}>
+          <Route path='/register' element={<Register />} />
+          <Route path='/login' element={<Login />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
   )
 }
+
 
 export default App;
