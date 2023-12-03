@@ -18,7 +18,20 @@ const Navbar = () => {
             <NavLink to='/dashboard' className='mx-3'>
               <span>Dashboard</span>
             </NavLink>
+
+            <NavLink to='/reports' className='mx-3'>
+              <span>Reports</span>
+            </NavLink>
+            <NavLink to='/users' className='mx-3'>
+              <span>Users</span>
+            </NavLink>
+            <NavLink to='/projects' className='mx-3'>
+              <span>Projects</span>
+            </NavLink>
+
           </div>
+
+        
         ) : (
           <div>
             <NavLink to='/login'>
