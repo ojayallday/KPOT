@@ -109,6 +109,18 @@ exports.createNew = async (req, res) => {
 
 //get all Projects
 
+exports.getProjects = async (req, res) => {
+  try {
+    const { rows } = await db.query('select * from projects')
+
+    return res.status(200).json({
+      success: true,
+      users: rows,
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
 //Get a project
 
 //update a project
