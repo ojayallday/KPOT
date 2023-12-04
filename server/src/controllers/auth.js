@@ -5,7 +5,7 @@ const { SECRET } = require('../constants')
 
 exports.getUsers = async (req, res) => {
   try {
-    const { rows } = await db.query('select user_id, email from users')
+    const { rows } = await db.query('SELECT user_id, email FROM users')
 
     return res.status(200).json({
       success: true,
@@ -21,7 +21,7 @@ exports.register = async (req, res) => {
   try {
     const hashedPassword = await hash(password, 10)
 
-    await db.query('insert into users(email,password) values ($1 , $2)', [
+    await db.query('INSERT INTO users(email,password) values ($1 , $2)', [
       email,
       hashedPassword,
     ])
@@ -90,7 +90,7 @@ exports.createNew = async (req, res) => {
   
   try {
     const { project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date } = req.body;
-     await db.query('insert into projects(project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date) values ($1, $2, $3 ,$4 ,$5 ,$6 ,$7 ,$8 ,$9)', [
+     await db.query('INSERT INTO projects(project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date) values ($1, $2, $3 ,$4 ,$5 ,$6 ,$7 ,$8 ,$9)', [
       project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date,
     ])
 
@@ -111,7 +111,7 @@ exports.createNew = async (req, res) => {
 
 exports.getProjects = async (req, res) => {
   try {
-    const { rows } = await db.query('select * from projects')
+    const { rows } = await db.query('SELECT * FROM projects')
 
     return res.status(200).json({
       success: true,
@@ -122,6 +122,21 @@ exports.getProjects = async (req, res) => {
   }
 }
 //Get a project
+
+
+exports.getaProject = async (req, res) => {
+  try {
+    const { id }= req.params;
+    await db.query('SELECT * FROM projects WHERE id=$1', [id])
+
+    return res.status(200).json({
+      success: true,
+      users: rows,
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
 
 //update a project
 
