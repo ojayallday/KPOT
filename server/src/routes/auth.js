@@ -5,6 +5,7 @@ const {
   login,
   protected,
   logout,
+  createNew,
 } = require('../controllers/auth')
 const {
   validationMiddleware,
@@ -18,5 +19,6 @@ router.get('/protected', userAuth, protected)
 router.post('/register', registerValidation, validationMiddleware, register)
 router.post('/login', loginValidation, validationMiddleware, login)
 router.get('/logout', logout)
+router.post('/projects', createNew)
 
 module.exports = router

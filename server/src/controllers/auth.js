@@ -84,3 +84,32 @@ exports.logout = async (req, res) => {
     })
   }
 }
+
+// Create a New Project 
+exports.createNew = async (req, res) => {
+  
+  try {
+    const { project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date } = req.body;
+     await db.query('insert into projects(project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date) values ($1, $2, $3 ,$4 ,$5 ,$6 ,$7 ,$8 ,$9)', [
+      project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date,
+    ])
+
+    return res.status(201).json({
+      success: true,
+      message: 'The project was added successfully',
+    })
+  } catch (error) {
+    console.log(error.message)
+    return res.status(500).json({
+      error: error.message,
+    })
+  }
+}
+
+
+//get all Projects
+
+//Get a project
+
+//update a project
+

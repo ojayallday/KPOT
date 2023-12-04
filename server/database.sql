@@ -13,33 +13,40 @@ CREATE TABLE users(
 --projects table
 
 CREATE TABLE projects (
-    id SERIAL NOT NULL,
-    description VARCHAR(255),
-    po INTEGER PRIMARY KEY NOT NULL,
+    id SERIAL PRIMARY KEY NOT NULL,
+    project_desc VARCHAR(255),
+    po INTEGER NOT NULL,
     region VARCHAR NOT NULL,
     partner VARCHAR(32),
-    msp VARCHAR(32)
+    msp VARCHAR(32),
     assigned_engineer VARCHAR,
-    status VARCHAR,
+    open_status VARCHAR,
     oac_date DATE,
     fac_date DATE,
-    priority INT NOT NULL check(priority >= 1 and priority <=5),
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 
 CREATE TABLE engineers(
     id SERIAL PRIMARY KEY,
-    name VARCHAR,
-    role VARCHAR
+    name VARCHAR(255)
 );
 
 CREATE TABLE partners(
     id SERIAL PRIMARY KEY,
-    name VARCHAR
+    name VARCHAR(255)
 );
 
 CREATE TABLE msp(
     id SERIAL PRIMARY KEY,
-    name VARCHAR
+    name VARCHAR(255)
+);
+
+
+
+--table trial 2
+
+CREATE TABLE projects (
+    id SERIAL PRIMARY KEY NOT NULL,
+    project_desc VARCHAR NOT NULL
 );
