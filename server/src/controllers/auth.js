@@ -161,12 +161,14 @@ exports.updateProject = async (req, res) => {
 //delete a project
 
 exports.deleteProject = async (req, res) => {
+  const { id }= req.params;
   try {
-    const { id } = await db.query('DELETE FROM projects WHERE id = $1', [id]);
+    const { rows } = await db.query('DELETE FROM projects WHERE id = $1', [id]);
 
     return res.status(200).json({
       success: true,
       message:'Project has been deleted',
+      
     })
   } catch (error) {
     console.log(error.message)
