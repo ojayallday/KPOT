@@ -115,7 +115,7 @@ exports.getProjects = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      users: rows,
+      projects: rows,
     })
   } catch (error) {
     console.log(error.message)
@@ -123,15 +123,14 @@ exports.getProjects = async (req, res) => {
 }
 //Get a project
 
-
 exports.getaProject = async (req, res) => {
+  const { id }= req.params; 
   try {
-    const { id }= req.params;
-    await db.query('SELECT * FROM projects WHERE id=$1', [id])
-
+    
+    const { rows } = await db.query('SELECT * FROM projects WHERE id = $1', [id])
     return res.status(200).json({
       success: true,
-      users: rows,
+      project: rows[0],
     })
   } catch (error) {
     console.log(error.message)
@@ -140,3 +139,36 @@ exports.getaProject = async (req, res) => {
 
 //update a project
 
+
+exports.updateProject = async (req, res) => {
+  const { id }= req.params;
+  try {
+    const { project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date } = req.body;
+    await db.query('UPDATE projects SET project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date = $1, $2, $3 ,$4 ,$5 ,$6 ,$7 ,$8 ,$9 WHERE id = $10', [
+     project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date, id
+   ])
+
+   return res.status(201).json({
+    success: true,
+    message: 'The project was updated successfully',
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
+
+//delete a project
+
+exports.deleteProject = async (req, res) => {
+  try {
+    const { id } = await db.query('DELETE FROM projects WHERE id = $1', [id]);
+
+    return res.status(200).json({
+      success: true,
+      message:'Project has been deleted',
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}

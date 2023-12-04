@@ -7,6 +7,9 @@ const {
   logout,
   createNew,
   getProjects,
+  getaProject,
+  updateProject,
+  deleteProject,
 } = require('../controllers/auth')
 const {
   validationMiddleware,
@@ -20,7 +23,10 @@ router.get('/protected', userAuth, protected)
 router.post('/register', registerValidation, validationMiddleware, register)
 router.post('/login', loginValidation, validationMiddleware, login)
 router.get('/logout', logout)
-router.post('/projects', createNew)
-router.get('/get-projects', getProjects)
+router.post('/new-project', createNew)
+router.get('/projects', getProjects)
+router.get('/projects/:id', getaProject)
+router.put('/projects/:id', updateProject)
+router.delete('/projects/:id',deleteProject)
 
 module.exports = router
