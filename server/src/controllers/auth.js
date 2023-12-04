@@ -144,7 +144,7 @@ exports.updateProject = async (req, res) => {
   const { id }= req.params;
   try {
     const { project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date } = req.body;
-    await db.query('UPDATE projects SET project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date = $1, $2, $3 ,$4 ,$5 ,$6 ,$7 ,$8 ,$9 WHERE id = $10', [
+    await db.query('UPDATE projects SET (project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date) = ($1, $2, $3 ,$4 ,$5 ,$6 ,$7 ,$8 ,$9) WHERE id = $10', [
      project_desc, po, region, partner, msp, assigned_engineer, open_status, oac_date, fac_date, id
    ])
 
