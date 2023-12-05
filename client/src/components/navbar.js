@@ -26,6 +26,9 @@ const Navbar = () => {
         </IconButton>
       </Box>
 
+
+      {/*Navigation buttons */}
+      
       <nav className='navbar navbar-light bg-light'>
         <div className='container'>
           <div>
@@ -53,6 +56,22 @@ const Navbar = () => {
           )}
         </div>
       </nav>
+
+
+
+      {/*Icons section */}
+      <Box display="flex">
+      <IconButton>
+          <NotificationsOutlinedIcon />
+        </IconButton>
+        <IconButton>
+          <SettingsOutlinedIcon />
+        </IconButton>
+        <IconButton>
+          <PersonOutlineOutlinedIcon />
+        </IconButton>
+      </Box>
+      
     </Box>
     
   )
