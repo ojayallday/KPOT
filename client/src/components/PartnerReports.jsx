@@ -4,7 +4,7 @@ import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
 
-const ProjectReports = () => {
+const PartnerReports = () => {
   const columnDefs = [
     { headerName: 'ID', field: 'id', sortable: true, filter: true },
     { headerName: 'Name', field: 'name', sortable: true, filter: true },
@@ -29,4 +29,4 @@ const ProjectReports = () => {
   );
 };
 
-export default ProjectReports;
+export default PartnerReports;

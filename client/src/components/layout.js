@@ -1,15 +1,20 @@
+import { Box } from '@mui/material';
 import MySidebar from './MySidebar'
 import Navbar from './navbar'
 import { Link } from 'react-router-dom';
 const Layout = ({ children }) => {
   return (
-    <div>
+    <Box >
+      <Box>
+        <Navbar />
+      </Box>
+      <Box display="flex">
+        <MySidebar />
+
+        <div className='container'>{children}</div>
+      </Box>
       
-      <Navbar />
-      <MySidebar/>
-       
-      <div className='container'>{children}</div>
-    </div>
+    </Box>
   )
 }
 
