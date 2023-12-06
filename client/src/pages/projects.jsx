@@ -1,5 +1,10 @@
 import React from "react";
+import Layout from "../components/layout";
 const Projects = () =>{
-    return
+    return(
+        <Layout>
+            
+        </Layout>
+    )
 }
 export default Projects;
