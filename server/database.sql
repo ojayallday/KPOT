@@ -41,12 +41,3 @@ CREATE TABLE msp(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
 );
-
-
-
---table trial 2
-
-CREATE TABLE projects (
-    id SERIAL PRIMARY KEY NOT NULL,
-    project_desc VARCHAR NOT NULL
-);
