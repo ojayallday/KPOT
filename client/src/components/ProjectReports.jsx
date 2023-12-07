@@ -1,6 +1,8 @@
 
 import React from 'react';
+
 import {Box}from '@mui/material'
+
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
@@ -8,6 +10,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css';
 const ProjectReports = () => {
   const columnDefs = [
     { headerName: 'ID', field: 'id', sortable: true, filter: true },
+
     { headerName: 'project_desc', field: 'project_desc', sortable: true, filter: true },
     { headerName: 'po', field: 'po', sortable: true, filter: true },
     { headerName: 'region', field: 'region', sortable: true, filter: true },
@@ -22,11 +25,14 @@ const ProjectReports = () => {
   const rowData = [
     { id: 1, project_desc: 'John Doe', po: 253 ,region: 'Kinoo',partner: 'Optimax',msp: 'Adrian',assigned_engineer: 'Big Papa Oj',oac_date:30-11-2023,fac_date:null,created_at:null},
     { id: 2, name: 'Jane Doe', po: 256 ,region: 'Kinoo',partner: 'Optimax',msp: 'Adrian',assigned_engineer: 'Big Papa Oj',oac_date:30-11-2023,fac_date:null,created_at:null },
+
     // Add more rows as needed
   ];
 
   return (
+
     <div className="ag-theme-alpine" style={{ height: '300px', width: '1800px' }}> 
+
       <AgGridReact
         columnDefs={columnDefs}
         rowData={rowData}
