@@ -51,9 +51,9 @@ const onSubmit = async (e) => {
   return (
 
 <Layout>
-    
+    <div className= "h-screen flex items-center justify-center">
     <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
-<h1>Register</h1>
+<h1 >Create a New Project</h1>
 
 <div className='mb-3'>
  <label htmlFor='project_desc' className='form-label'>
@@ -61,12 +61,12 @@ const onSubmit = async (e) => {
  </label>
  <input
    onChange={(e) => onChange(e)}
-   type='project_desc'
+   type='text'
    className='form-control'
    id='project_desc'
    name='project_desc'
    value={values.project_desc}
-   placeholder='Project Description@gmail.com'
+   placeholder='Please enter your Project Description/Name'
    required
  />
 </div>
@@ -94,7 +94,7 @@ const onSubmit = async (e) => {
  </label>
  <input
    onChange={(e) => onChange(e)}
-   type='region'
+   type='text'
    className='form-control'
    id='region'
    name='region'
@@ -111,7 +111,7 @@ const onSubmit = async (e) => {
  </label>
  <input
    onChange={(e) => onChange(e)}
-   type='partner'
+   type='text'
    className='form-control'
    id='partner'
    name='partner'
@@ -128,7 +128,7 @@ const onSubmit = async (e) => {
  </label>
  <input
    onChange={(e) => onChange(e)}
-   type='msp'
+   type='text'
    className='form-control'
    id='msp'
    name='msp'
@@ -145,7 +145,7 @@ const onSubmit = async (e) => {
  </label>
  <input
    onChange={(e) => onChange(e)}
-   type='assigned_engineer'
+   type='text'
    className='form-control'
    id='assigned_engineer'
    name='assigned_engineer'
@@ -162,7 +162,7 @@ const onSubmit = async (e) => {
  </label>
  <input
    onChange={(e) => onChange(e)}
-   type='open_status'
+   type='text'
    className='form-control'
    id='open_status'
    name='open_status'
@@ -212,6 +212,7 @@ const onSubmit = async (e) => {
  Submit
 </button>
 </form>
+</div>
 </Layout>
 
   );
