@@ -10,7 +10,6 @@ const Layout = ({ children }) => {
       </Box>
       <Box display="flex">
         <MySidebar />
-
         <div className='container'>{children}</div>
       </Box>
       
