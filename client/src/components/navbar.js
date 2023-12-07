@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <nav className='navba navbar-light bg-light'>
-      <div className='container'>
+     
 
         {isAuth ? (
       
@@ -34,7 +34,7 @@ const Navbar = () => {
             </NavLink>
           </div>
         )}
-      </div>
+    
     </nav>
   )
 }

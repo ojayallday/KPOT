@@ -9,8 +9,8 @@ const TopBarWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  background-color: #333; /* Add your desired background color */
-  color: #fff; /* Add your desired text color */
+  background-color: #333; 
+  color: #fff; 
 `;
 
 const LeftContent = styled.div`
