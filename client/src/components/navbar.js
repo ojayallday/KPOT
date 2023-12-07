@@ -35,7 +35,25 @@ const Navbar = () => {
             <NavLink to='/'>
               <span className='navbar-brand mb-0 h1'>Home</span>
             </NavLink>
-          </div>
+
+            <NavLink to='/reports' className='mx-3'>
+              <span>Reports</span>
+            </NavLink>
+            <NavLink to='/users' className='mx-3'>
+              <span>Users</span>
+            </NavLink>
+            <NavLink to='/projects' className='mx-3'>
+              <span>Projects</span>
+            </NavLink>
+
+          </div
+
+        
+        
+          <div>
+            <NavLink to='/login'>
+              <span>Login</span>
+            </NavLink>
 
           {isAuth ? (
             <div>
