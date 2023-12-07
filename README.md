@@ -1,52 +1,41 @@
-# Hero Squad
-## Build your character as a Superhero or a Villain
-![theJoker.jpeg](src%2Fmain%2Fresources%2Fpublic%2Fimages%2FtheJoker.jpeg)
-#### Are you a hero a villain? 
+# Wildlife Tracker
 
-## Author's name
-moses mbugua
-
-## Technologies Used
-- Java Spark
-- Gradle
-- Handlebars 
-- Jquery
+##### By Christine Njeri
 
 ## Description
-
-```bash
-HeroSquad is a web app  built using java-spark framework. Tt allows one to recruit a well-balanced team of superheroes or villains.
-One is able to assign a name, age, special power and weakness to their character as well as assign their hero or villain to a squad accordingly.
-
-A hero can only participate in one Squad at a time.
-```
-
-## Installation
-- Clone the repo using "git clone https://github.com/deusnyakundi/heroSquad.git" to add it to your local directory
-- You may equally download the repo as zip and extract
-- Open the folder using your IDE i.e IntelliJ
-- Run scripts to allow gradle to build dependencies
-- Run the App.js 
-- After build is complete, open http://localhost:4567/ in your browser to access the app
-- Enjoy ;)
-
-## Tests
-
-- To run test, run files under tests/java package for tests.
-
-
+This application allows the user to add a sighting for either a common or endangered animal and view the sightings.
+One can also add a new animal and view the animals.
 
 ## User Requirements
+The application allow users to do the following:
+1. Add a new animal, common or endangered and save.
+2. View the added animals.
+3. Add a sighting for each animal and save.
 
-The applications allow users to do the following:
-1.Add a new squad
-2.Add a new hero in the squad
-3.Add a squad name , size and a cause
-4.View a list of current squads
-3.View a list of heroes in a squad
 
-## Live Link
-WIP
+## Project Setup
+* Make sure all requirements for running java applications are installed;JUnit, Intellij,SDK,JDK.
+* Clone the project to your local machine from https://github.com/Christine-N-Mwaura/Wildlife-tracker.git.
+* Run gradle run on the terminal.
+ 
+ 
+ 
+## Technologies Used
+
+* JDK 
+* Junit
+* Java
+* SDK
+* spark
+
+## Bugs
+The sighting details are saved into the database but couldn't display on the view once saved.
+
+
+## Contact Details
+For further information contact me at njerimwaura25@gmail.com
+
+
+
 ## License
-
-- This project is licensed under the MIT Open Source license Copyright (c) 2023.
+This project is licensed under the MIT Open Source license Copyright (c) 2019. Christine Njeri.

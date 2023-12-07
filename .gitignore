@@ -1,3 +1,5 @@
+# Default ignored files
+/.idea/workspace.xml
 # Compiled source #
 ############
 *.com
@@ -44,12 +46,10 @@ gradle
 gradlew.bat
 gradlew
 settings.gradle
-.settings/
-.project
-.classpath
+!gradle-wrapper.jar
+
 
 # IntelliJ #
 ############
 .idea
 .idea/
-!gradle-wrapper.jar
