@@ -9,6 +9,9 @@ import Dashboard from './pages/dashboard'
 import Home from './pages/home'
 import Login from './pages/login'
 import Register from './pages/register'
+import Partners from './pages/partners'
+import Projects from './pages/projects'
+import Engineers from './pages/engineers'
 import { useSelector } from 'react-redux'
 import { Fragment } from 'react'
 
@@ -35,11 +38,17 @@ const App = () => {
         <Route path='/' element={<Home />} />
 
         <Route element={<PrivateRoutes />}>
+
           <Route path='/dashboard' element={<Dashboard />} /> 
           <Route path='/api/new-project' element={<CreateProject/>} />     
           <Route path='/projects' element={<ListProjects/>} />  ``
-          </Route>
-              ``
+    
+          <Route path='/projects' element={<Projects />} />
+          <Route path='/engineers' element={<Engineers />} />
+          <Route path='/partners' element={<Partners />} />
+ 
+        </Route>
+
         <Route element={<RestrictedRoutes />}>
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />

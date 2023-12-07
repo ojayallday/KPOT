@@ -4,6 +4,12 @@ import { fetchProtectedInfo, onLogout } from '../api/auth'
 import Layout from '../components/layout'
 import { unauthenticateUser } from '../redux/slices/authSlice'
 import CreateProject from '../components/createProject'
+import { Box } from '@mui/material';
+import ProjectsCard1 from '../components/ProjectsCard1'
+import ProjectsCard2 from '../components/ProjectsCard2'
+import ProjectsCard3 from '../components/ProjectsCard3'
+import ProjectReports from '../components/ProjectReports'
+
 
 const Dashboard = () => {
   const dispatch = useDispatch()
@@ -51,6 +57,17 @@ const Dashboard = () => {
         <button onClick={() => logout()} className='btn btn-primary'>
           Logout
         </button>
+        <Box>
+          <Box sx={{display:'flex'}} >
+            <ProjectsCard1/>
+            <ProjectsCard2/>
+            <ProjectsCard3/>
+          </Box>
+          <Box>
+            <ProjectReports/>
+          </Box>
+          
+        </Box>
       </Layout>
     </div>
   )

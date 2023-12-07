@@ -1,14 +1,22 @@
+import { Box } from '@mui/material';
+import MySidebar from './MySidebar'
 import Navbar from './navbar'
-import Sidebar from './sidebar'
 
-
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Navbar />
-      
-      <div className='container'>{children}</div>
-    </div>
+    <Box  >
+      <Box>
+        <Navbar />
+      </Box>
+      <Box display="flex" height='800px'>
+        <MySidebar />
+        <div className='container'>{children}</div>
+      </Box>
+      <Footer/>
+    </Box>
+
   )
 }
 
