@@ -5,7 +5,7 @@ import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
 import { FaChartBar, FaTable, FaFilePdf, FaFileCsv } from 'react-icons/fa';
 import { FaTachometerAlt } from 'react-icons/fa';
-import LogoutButton from './logoutBtn';
+
 
 export const SidebarData = [
   {
