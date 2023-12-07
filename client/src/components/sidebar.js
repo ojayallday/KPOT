@@ -8,9 +8,10 @@ import SubMenu from './subMenu';
 import { IconContext } from 'react-icons/lib';
 import LogoutButton from './logoutBtn';
 
+
 const Nav = styled.div`
   background: #15171c;
-  height: 80px;
+  height: 50px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -51,9 +52,12 @@ const Sidebar = () => {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav>
+         
           <NavIcon to='#'>
             <FaIcons.FaBars onClick={showSidebar} />
+           
           </NavIcon>
+          
         </Nav>
         <SidebarNav sidebar={sidebar}>
           <SidebarWrap>

@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Sidebar from './sidebar'
+import TopBar from './topBar'
 
 const Navbar = () => {
   const { isAuth } = useSelector((state) => state.auth)
@@ -14,6 +15,7 @@ const Navbar = () => {
 
           <div>
             <Sidebar/>
+            <TopBar/>
             <NavLink to='/dashboard' className='mx-3'>
               <span>Dashboard</span>
             </NavLink>
