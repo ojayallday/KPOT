@@ -214,33 +214,6 @@ const onSubmit = async (e) => {
 </form>
 </Layout>
 
-
-/*
-
-
-
-    <Fragment>
-
-      <form onSubmit={(e) => onSubmit(e)} className='container mt-3'>
-        <input type="text" className="form-control" name='project_desc' placeholder="Project Description" value={values.project_desc} onChange={e => setValues(e.target.value)} />
-        <input type="integer" className="form-control" name='po' placeholder="PO" value={values.po} onChange={e => setValues(e.target.value)} />
-        <input type="text" className="form-control" name='region' placeholder="Region" value={values.region} onChange={e => setValues(e.target.value)} />
-        <input type="text" className="form-control" name='partner' placeholder="Partner" value={values.partner} onChange={e => setValues(e.target.value)} />
-        <input type="text" className="form-control" name='msp' placeholder="MSP" value={values.msp} onChange={e => setValues(e.target.value)} />
-        <input type="text" className="form-control" name='assigned_engineer' placeholder="Assigned Engineer" value={values.assigned_engineer} onChange={e => setValues(e.target.value)} />
-        <input type="text" className="form-control" name='open_status' placeholder="Open Status" value={values.open_status} onChange={e => setValues(e.target.value)} />
-        <input type="date" className="form-control" name='oac_date' placeholder="OAC Date" value={values.oac_date} onChange={e => setValues(e.target.value)} />
-        <input type="date" className="form-control" name='fac_date' placeholder="FAC Date"value={values.fac_date} onChange={e => setValues(e.target.value)} />
-        
-        <div className="text-center mt-3">
-        <button className="btn btn-success">Add</button>
-
-        </div>
-       
-      </form>
-    </Fragment>
-
-    */
   );
 };
 
