@@ -37,7 +37,7 @@ const App = () => {
         <Route element={<PrivateRoutes />}>
           <Route path='/dashboard' element={<Dashboard />} /> 
           <Route path='/api/new-project' element={<CreateProject/>} />     
-          <Route path='/projects' element={<ListProjects/>} />  ``
+          <Route path='/api/projects' element={<ListProjects/>} />  ``
           </Route>
               ``
         <Route element={<RestrictedRoutes />}>
