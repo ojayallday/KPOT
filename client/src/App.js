@@ -38,6 +38,7 @@ const App = () => {
           <Route path='/engineers' element={<Engineers />} />
           <Route path='/partners' element={<Partners />} />
   
+
         </Route>
 
         <Route element={<RestrictedRoutes />}>
