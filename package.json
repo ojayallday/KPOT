@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "if-env": "^1.0.4"
+    "if-env": "^1.0.4",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.19"
+    "@mui/material": "^5.14.19",
+    "react-pro-sidebar": "^1.1.0-alpha.1" 
+   
 
   }
 }
