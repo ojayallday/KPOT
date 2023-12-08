@@ -7,10 +7,10 @@ import Layout from '../components/layout';
 import { unauthenticateUser } from '../redux/slices/authSlice';
 import styled from 'styled-components';
 import { fetchProjectsInfo } from '../api/auth';
-import { Box } from '@mui/material';
-import ProjectsCard1 from '../components/ProjectsCard1';
-import ProjectsCard2 from '../components/ProjectsCard2';
-import ProjectsCard3 from '../components/ProjectsCard3';
+
+import ProjectsCard1 from '../components/ProjectsCard1.jsx';
+import ProjectsCard2 from '../components/ProjectsCard2.jsx';
+import ProjectsCard3 from '../components/ProjectsCard3.jsx';
 
 const StyledDashboard = styled.div`
   display: flex;
@@ -102,7 +102,11 @@ const Dashboard = () => {
    
               </SummaryCard>
             ))}
-
+            
+            <ProjectsCard1/>
+            <ProjectsCard2/>
+            <ProjectsCard3/>
+           
         </StyledDashboard>
       </Layout>
     </div>
