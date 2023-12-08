@@ -1,22 +1,18 @@
-// UserTable.js
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { fetchUsersInfo } from '../api/auth';
-import Layout from './layout';
 
 // Styled components
 const StyledTable = styled.table`
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  margin-top: 20px; /* Adjust as needed */
 `;
 
 const TableHeader = styled.th`
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
-  background-color: #f2f2f2;
 `;
 
 const TableCell = styled.td`
@@ -24,51 +20,51 @@ const TableCell = styled.td`
   padding: 8px;
   text-align: left;
 `;
-
-const UsersTable = () => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const usersData = await fetchUsersInfo();
-        setUsers(usersData);
-      } catch (error) {
-        console.error('Error fetching users:', error.message);
-      }
+const EditButton = styled.button`
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #4caf50; /* Green color,  */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+`;
+const UsersTable = ({ users }) => {
+    const handleEditClick = (userId) => {
+      // To implement OnClick logic
+      console.log(`Edit button clicked for user with ID: ${userId}`);
     };
-
-    fetchUsers();
-  }, []);
-
-  return (
-    <Layout>
-    <StyledTable>
-      <thead>
-        <tr>
-          <TableHeader>Email</TableHeader>
-          <TableHeader>Hashed Password</TableHeader>
-         
-        </tr>
-      </thead>
-      <tbody>
-        {Array.isArray(users) && users.length > 0 ? (
-          users.map((user) => (
-            <tr key={user._id}>
-              <TableCell>{user.email}</TableCell>
-              <TableCell>{user.hashedPassword}</TableCell>
-              
-            </tr>
-          ))
-        ) : (
+  
+    // Check if users is defined before mapping
+    if (!users) {
+      return <p>No users available</p>;
+    }
+  
+    return (
+      <StyledTable>
+        <thead>
           <tr>
-            <td colSpan="2">No users found</td>
+            <TableHeader>Email</TableHeader>
+            <TableHeader>Hashed Password</TableHeader>
+            <TableHeader>Reset Password for user</TableHeader>
           </tr>
-        )}
-      </tbody>
-    </StyledTable>
-    </Layout>
-  );
-};
-
-export default UsersTable;
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.user_id}>
+              <TableCell>{user.email}</TableCell>
+              <TableCell>{user.password}</TableCell>
+              <TableCell>
+                <EditButton onClick={() => handleEditClick(user.user_id)}>
+                  Reset Password
+                </EditButton>
+              </TableCell>
+            </tr>
+          ))}
+        </tbody>
+      </StyledTable>
+    );
+  };
+  
+  export default UsersTable;
+  
