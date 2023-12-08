@@ -1,43 +1,63 @@
 
 import React from 'react';
+import styled from 'styled-components';
+
+// Styled components
+const StyledTable = styled.table`
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px; /* Adjust as needed */
+`;
+
+const TableHeader = styled.th`
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+`;
+
+const TableCell = styled.td`
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+`;
 
 const ProjectsTable = ({ projects }) => {
   return (
-    <table>
+    <StyledTable>
       <thead>
         <tr>
-            <th>Project Description</th>
-            <th>PO</th>
-            <th>Region</th>
-            <th>Rollout Partner</th>
-            <th>MSP</th>
-            <th>Assigned Engineer</th>
-            <th>Project Status</th>
-            <th>OAC Date</th>
-            <th>FAC Date</th>
-            <th>Edit</th>
-            <th>Delete</th>
+        <TableHeader>Project Description</TableHeader>
+        <TableHeader>PO</TableHeader>
+        <TableHeader>Region</TableHeader>
+        <TableHeader>Partner</TableHeader>
+        <TableHeader>MSP</TableHeader>
+        <TableHeader>Assigned Engineer</TableHeader>
+        <TableHeader>Project Status</TableHeader>
+        <TableHeader>OAC Date</TableHeader>
+        <TableHeader>FAC Date</TableHeader>
+        <TableHeader>Edit</TableHeader>
+        
         </tr>
       </thead>
       <tbody>
 
         {projects.map((project) => (
             <tr key={project.id}>
-            <td>{project.project_desc}</td>
-            <td>{project.po}</td>
-            <td>{project.region}</td>
-            <td>{project.partner}</td>
-            <td>{project.msp}</td>
-            <td>{project.assigned_engineer}</td>
-            <td>{project.open_status}</td>
-            <td>{project.oac_date}</td>
-            <td>{project.fac_date}</td>
-
-    
+            <TableCell>{project.project_desc}</TableCell>
+            <TableCell>{project.po}</TableCell>
+            <TableCell>{project.region}</TableCell>
+            <TableCell>{project.partner}</TableCell>
+            <TableCell>{project.msp}</TableCell>
+            <TableCell>{project.assigned_engineer}</TableCell>
+            <TableCell>{project.open_status}</TableCell>
+            <TableCell>{project.oac_date}</TableCell>
+            <TableCell>{project.fac_date}</TableCell>
+            <TableCell>{project.edit}</TableCell>
+            
           </tr>
         ))}
       </tbody>
-    </table>
+      </StyledTable>
   );
 };
 
