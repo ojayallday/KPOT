@@ -3,8 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch } from 'react-redux'
-import { fetchProtectedInfo, onLogout } from '../api/auth'
-import Layout from '../components/layout'
+import {  onLogout } from '../api/auth'
 import { unauthenticateUser } from '../redux/slices/authSlice'
 
 const LogoutButton = () => {

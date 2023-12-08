@@ -1,5 +1,8 @@
 import React, { Fragment, useEffect, useState } from "react";
 import EditProject from "./editProject";
+import { fetchProjectsInfo } from "../api/auth";
+import Layout from "./layout";
+import ProjectsTable from "./ProjectsTable";
 
 const ListProjects = () => {
   const [projects, setProjects] = useState([]);
@@ -18,9 +21,11 @@ const ListProjects = () => {
     }
   };
 
-  const getProjects = async () => {
+
+
+/*  const getProjects = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/projects");
+      const response = await (fetchProjectsInfo);
       const jsonData = await response.json();
 
       setProjects(jsonData);
@@ -28,6 +33,7 @@ const ListProjects = () => {
       console.error(err.message);
     }
   };
+  
 
   useEffect(() => {
     getProjects();
@@ -35,13 +41,55 @@ const ListProjects = () => {
 
   console.log(projects);
 
+  */
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetchProjectsInfo();
+        // Access projects from the "projects" property in the response
+        const projectsData = response.success ? response.projects : [];
+        
+        setProjects(projectsData);
+      } catch (error) {
+        console.error('Error fetching projects:', error.message);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+
   return (
-    <Fragment>
+
+   <Layout>
+    <h2>Projects</h2>
+      {Array.isArray(projects) && projects.length > 0 ? (
+        <ProjectsTable projects={projects} />
+      ) : (
+        <p>No projects found</p>
+      )}
+   </Layout>
+  
+
+    /*
+    <Layout>
+
+
       {" "}
       <table class="table mt-5 text-center">
         <thead>
           <tr>
-            <th>Description</th>
+            <th>ID</th>
+            <th>Project Description</th>
+            <th>PO</th>
+            <th>Region</th>
+            <th>Rollout Partner</th>
+            <th>MSP</th>
+            <th>Assigned Engineer</th>
+            <th>OAC Date</th>
+            <th>FAC Date</th>
+           
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -51,7 +99,9 @@ const ListProjects = () => {
             <td>John</td>
             <td>Doe</td>
             <td>john@example.com</td>
-          </tr> */}
+          </tr> */
+
+          /*
           {projects.map(project => (
             <tr key={project.id}>
               <td>{project.description}</td>
@@ -70,7 +120,9 @@ const ListProjects = () => {
           ))}
         </tbody>
       </table>
-    </Fragment>
+    </Layout>
+
+    */
   );
 };
 

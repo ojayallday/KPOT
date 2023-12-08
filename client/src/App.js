@@ -15,6 +15,7 @@ import { Fragment } from 'react'
 //import components
 import CreateProject from './components/createProject'
 import ListProjects from './components/listProjects'
+import GetUsers from './components/getUsers'
 
 const PrivateRoutes = () => {
   const { isAuth } = useSelector((state) => state.auth)
@@ -37,7 +38,8 @@ const App = () => {
         <Route element={<PrivateRoutes />}>
           <Route path='/dashboard' element={<Dashboard />} /> 
           <Route path='/api/new-project' element={<CreateProject/>} />     
-          <Route path='/api/projects' element={<ListProjects/>} />  ``
+          <Route path='/api/projects' element={<ListProjects/>} /> 
+          <Route path='/api/projects' element={<GetUsers/>} />  
           </Route>
               ``
         <Route element={<RestrictedRoutes />}>

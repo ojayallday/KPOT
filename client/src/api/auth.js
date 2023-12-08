@@ -26,3 +26,14 @@ export async function onProject(projectData) {
     projectData
   )
 }
+
+export async function fetchProjectsInfo() {
+  try {
+    const response = await axios.get('http://localhost:8000/api/projects');
+    return response.data;
+  } catch (error) {
+    // Handle errors appropriately, e.g., log the error or throw it
+    console.error('Error fetching projects:', error.message);
+    throw error;
+  }
+}

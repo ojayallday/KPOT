@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { fetchProtectedInfo, onLogout } from '../api/auth'
 import Layout from '../components/layout'
 import { unauthenticateUser } from '../redux/slices/authSlice'
-import CreateProject from '../components/createProject'
+
 
 const Dashboard = () => {
   const dispatch = useDispatch()
