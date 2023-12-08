@@ -20,8 +20,20 @@ const TableCell = styled.td`
   padding: 8px;
   text-align: left;
 `;
-
+const EditButton = styled.button`
+  margin-right: 5px;
+  padding: 5px 10px;
+  background-color: #4caf50; /* Green color, you can change it */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+`;
 const ProjectsTable = ({ projects }) => {
+    const handleEditClick = (projectId) => {
+        
+        console.log(`Edit button clicked for project with ID: ${projectId}`);
+      };
   return (
     <StyledTable>
       <thead>
@@ -52,7 +64,11 @@ const ProjectsTable = ({ projects }) => {
             <TableCell>{project.open_status}</TableCell>
             <TableCell>{project.oac_date}</TableCell>
             <TableCell>{project.fac_date}</TableCell>
-            <TableCell>{project.edit}</TableCell>
+            <TableCell>
+              <EditButton onClick={() => handleEditClick(project.id)}>
+                Edit
+              </EditButton>
+            </TableCell>
             
           </tr>
         ))}
