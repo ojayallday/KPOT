@@ -31,7 +31,7 @@ const EditButton = styled.button`
 `;
 const ProjectsTable = ({ projects }) => {
     const handleEditClick = (projectId) => {
-        
+        //To implement OnClick logic
         console.log(`Edit button clicked for project with ID: ${projectId}`);
       };
   return (

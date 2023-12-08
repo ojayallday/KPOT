@@ -26,7 +26,7 @@ export async function onProject(projectData) {
     projectData
   )
 }
-
+//API to fetch all created projects
 export async function fetchProjectsInfo() {
   try {
     const response = await axios.get('http://localhost:8000/api/projects');
@@ -34,6 +34,17 @@ export async function fetchProjectsInfo() {
   } catch (error) {
     // Handle errors appropriately, e.g., log the error or throw it
     console.error('Error fetching projects:', error.message);
+    throw error;
+  }
+}
+
+//FETCH registered users
+export async function fetchUsersInfo() {
+  try {
+    const response = await axios.get('http://localhost:8000/api/get-users');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching users:', error.message);
     throw error;
   }
 }

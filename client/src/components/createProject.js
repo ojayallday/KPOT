@@ -43,8 +43,9 @@ const onSubmit = async (e) => {
     oac_date:'', 
     fac_date:'' })
   } catch (error) {
-   // console.log(error.response.data.error)
+   // setError(error.response.data.error)
     setSuccess('')
+  // console.log(error.response.data.error)
   }
 }
 

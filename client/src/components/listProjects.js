@@ -42,7 +42,7 @@ const ListProjects = () => {
   return (
 
    <Layout>
-    <h2>Projects</h2>
+    <h2>KPOT Projects</h2>
       {Array.isArray(projects) && projects.length > 0 ? (
         <ProjectsTable projects={projects} />
       ) : (
