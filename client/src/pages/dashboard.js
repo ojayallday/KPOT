@@ -94,19 +94,15 @@ const Dashboard = () => {
             <h3>Total Projects</h3>
             <p>{totalProjects}</p>
           </SummaryCard>
-
           {openStatusCounts &&
             Object.entries(openStatusCounts).map(([status, count]) => (
               <SummaryCard key={status}>
                 <h3>{status}</h3>
                 <p>{count}</p>
-          <Box sx={{display:'flex'}} >
-            <ProjectsCard1/>
-            <ProjectsCard2/>
-            <ProjectsCard3/>
-          </Box>
+   
               </SummaryCard>
             ))}
+
         </StyledDashboard>
       </Layout>
     </div>
