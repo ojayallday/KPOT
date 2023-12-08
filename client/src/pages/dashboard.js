@@ -1,3 +1,4 @@
+
 // Dashboard.js
 
 import React, { useEffect, useState } from 'react';
@@ -81,6 +82,7 @@ const Dashboard = () => {
       return acc;
     }, {});
 
+
   return loading ? (
     <Layout>
       <h1>Loading...</h1>
@@ -88,6 +90,7 @@ const Dashboard = () => {
   ) : (
     <div>
       <Layout>
+
         <h2>{protectedData}</h2>
         <StyledDashboard>
           <SummaryCard>
