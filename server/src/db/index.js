@@ -4,7 +4,7 @@ const pool = new Pool({
     host: 'localhost',
     database: 'safpro',
     password: 'superadmin',
-    port: 5433,
+    port: 5432,
 })
 module.exports = {
     query: (text, params) => pool.query (text, params),
