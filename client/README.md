@@ -49,7 +49,7 @@ A project management (PM) system is a tool, supported by technology, that helps 
    
    
 ### Contact Information 
- - Name : Deus Ombese, Julias Ojalla, Aaron Kipyegon, Eliud Gateri, Geoffrey Kipchumba, Hellen Omwono & Kevin Muchiri
+ - Name : Deus Ombese, Julias Ojalla, Aaron Kipyegon, Fenny Gitahi & Moses Muteti
  - Email: contact@moringaschool.com 
  - Phone : 0205002167 
  - Institution: Moringa School 
