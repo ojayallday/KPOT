@@ -23,7 +23,7 @@ const TableCell = styled.td`
 const EditButton = styled.button`
   margin-right: 5px;
   padding: 5px 10px;
-  background-color: #4caf50; /* Green color, you can change it */
+  background-color: #4caf50; /* Green color,  */
   color: white;
   border: none;
   border-radius: 3px;
