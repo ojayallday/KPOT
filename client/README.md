@@ -1,4 +1,63 @@
-# Getting Started with Create React App and Redux
+### Project Name
+KPOT - Keeping Projects On Track!
+
+### Authors/Contributors
+ 
+ 1. Deus Ombese
+ 2. Julias Ojalla
+ 3. Aaron Kipyegon
+ 4. Fenny Gitahi
+ 5. Moses Muteti
+
+### About this project 
+A project management (PM) system is a tool, supported by technology, that helps streamline and organize business operations for all stakeholder projets in the FTTx scope.
+
+### Live Link
+ 
+ 
+### BDD
+  As users:
+
+### Technologies and Languages used
+ 1. Node JS 
+ 1. Mongoose Database
+ 1. Express JS
+ 1. React JS
+ 1. HTML and CSS 
+ 1. Bootstrap
+ 1. Google Chrome
+ 1. Visual Studio
+ 
+### Dependencies
+ 1. Node v18.16.0 
+ 1. Bootstrap v5.3.0 
+ 1. NPM v9.5.1 
+ 1. Express v4.18.2 
+ 1. NodeMon v2.0.22 
+ 1. jQuery v3.6.3 
+
+### Setup and Installations Instructions
+
+     
+ 2. Contributions & make improvements:   
+    - Clone the application source code into your project folder    
+       `git clone https://github.com/ojayallday/KPOT.git`   
+    - Install all the project dependencies      
+    - Locally develop, improve and test the web application  
+    - Request to be invited as a contributor and create your own branch & merge to the develop branch once invitation is approved.   
+    -  Merges to master branch will have to be approved before the improvements are effected on the live link.   
+   
+   
+### Contact Information 
+ - Name : Deus Ombese, Julias Ojalla, Aaron Kipyegon, Eliud Gateri, Geoffrey Kipchumba, Hellen Omwono & Kevin Muchiri
+ - Email: contact@moringaschool.com 
+ - Phone : 0205002167 
+ - Institution: Moringa School 
+ - P.O Box 28860 - 00100, Nairobi 
+
+
+###  License and Copyright Information
+This project is licensed under the MIT License - see the `LICENSE` file for details.# Getting Started with Create React App and Redux
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
