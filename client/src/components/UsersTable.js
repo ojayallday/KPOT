@@ -48,7 +48,7 @@ const UsersTable = () => {
         <tr>
           <TableHeader>Email</TableHeader>
           <TableHeader>Hashed Password</TableHeader>
-          {/* Add more table headers for other fields */}
+         
         </tr>
       </thead>
       <tbody>
@@ -57,7 +57,7 @@ const UsersTable = () => {
             <tr key={user._id}>
               <TableCell>{user.email}</TableCell>
               <TableCell>{user.hashedPassword}</TableCell>
-              {/* Add more table cells for other fields */}
+              
             </tr>
           ))
         ) : (
