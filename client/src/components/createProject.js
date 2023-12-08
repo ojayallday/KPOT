@@ -41,12 +41,14 @@ const onSubmit = async (e) => {
     assigned_engineer:'', 
     open_status:'', 
     oac_date:'', 
-    fac_date:'' })
+    fac_date:'' });
+   
   } catch (error) {
    // setError(error.response.data.error)
     setSuccess('')
   // console.log(error.response.data.error)
   }
+  window.location = "/api/projects";
 }
 
   return (
