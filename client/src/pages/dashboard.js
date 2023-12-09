@@ -107,7 +107,7 @@ const Dashboard = () => {
         <StyledDashboard>
           <SummaryCard style={{ backgroundColor: '#f0f0f0',width: '400px', height: '200px' }}>
             <h3 >Total Projects</h3>
-            <p style={{ fontSize: '56px', fontFamily: 'Arial, sans-serif',marginTop: '18px' }}>{totalProjects}</p>
+            <p style={{ fontSize: '56px', fontFamily: 'Arial, sans-serif',marginTop: '50px' }}>{totalProjects}</p>
           </SummaryCard>
           {openStatusCounts &&
             Object.entries(openStatusCounts).map(([status, count],index) => (
@@ -125,11 +125,9 @@ const Dashboard = () => {
                     <ProjectsCard3/>
 
               </FlexContainer>
-      
-
+  
       </Layout>
 
-     
     </div>
   
   );
