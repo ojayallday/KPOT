@@ -26,6 +26,11 @@ const SummaryCard = styled.div`
   text-align: center;
 `;
 
+const FlexContainer = styled.div`
+  display: flex;
+  
+`;
+
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -59,8 +64,12 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const projectsData = await fetchProjectsInfo();
-        setProjects(projectsData || []); // Ensure projects is initialized as an array
+ 
+        const response = await fetchProjectsInfo();
+        // Access projects from the "projects" property in the response
+        const projectsData = response.success ? response.projects : [];
+        
+        setProjects(projectsData || []);
       } catch (error) {
         console.error('Error fetching projects:', error.message);
       }
@@ -75,15 +84,21 @@ const Dashboard = () => {
 
   // Calculate summary data
   const totalProjects = projects.length;
-  const openStatusCounts =
+  const openStatusCounts = 
     Array.isArray(projects) &&
     projects.reduce((acc, project) => {
       acc[project.open_status] = (acc[project.open_status] || 0) + 1;
       return acc;
+
+      
     }, {});
+
+    console.log('totalProjects:', totalProjects);
+    console.log('openStatusCounts:', openStatusCounts);
 
 
   return loading ? (
+    
     <Layout>
       <h1>Loading...</h1>
     </Layout>
@@ -93,26 +108,31 @@ const Dashboard = () => {
 
         <h2>{protectedData}</h2>
         <StyledDashboard>
-          <SummaryCard>
-            <h3>Total Projects</h3>
-            <p>{totalProjects}</p>
+          <SummaryCard style={{ backgroundColor: '#f0f0f0',width: '400px', height: '200px' }}>
+            <h3 >Total Projects</h3>
+            <p style={{ fontSize: '56px', fontFamily: 'Arial, sans-serif',marginTop: '50px' }}>{totalProjects}</p>
           </SummaryCard>
           {openStatusCounts &&
-            Object.entries(openStatusCounts).map(([status, count]) => (
-              <SummaryCard key={status}>
+            Object.entries(openStatusCounts).map(([status, count],index) => (
+              <SummaryCard key={status} style={{ backgroundColor: index % 2 === 0 ? '#ff0000' : '#7cfc00',width: '400px', height: '200px' }}>
                 <h3>{status}</h3>
-                <p>{count}</p>
-   
-              </SummaryCard>
+                <p style={{ fontSize: '56px', fontFamily: 'Arial, sans-serif', marginTop: '50px' }}>{count}</p>
+
+                </SummaryCard>
             ))}
             
-            <ProjectsCard1/>
-            <ProjectsCard2/>
-            <ProjectsCard3/>
-           
         </StyledDashboard>
+              <FlexContainer>
+                    <ProjectsCard1/>
+                    <ProjectsCard2/>
+                    <ProjectsCard3/>
+
+              </FlexContainer>
+  
       </Layout>
+
     </div>
+  
   );
 };
 

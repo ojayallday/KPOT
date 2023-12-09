@@ -19,10 +19,6 @@ const Navbar = () => {
           <div>
             <Sidebar/>
             <TopBar/>
-            <NavLink to='/dashboard' className='mx-3'>
-              <span>Dashboard</span>
-            </NavLink>
-
           </div>
 
         
