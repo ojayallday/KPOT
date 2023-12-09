@@ -40,7 +40,7 @@ const ListProjects = () => {
 
 
   return (
-
+<div>
    <Layout>
     <h2>KPOT Projects</h2>
       {Array.isArray(projects) && projects.length > 0 ? (
@@ -49,7 +49,7 @@ const ListProjects = () => {
         <p>No projects found</p>
       )}
    </Layout>
-  
+   </div>
   );
 };
 
