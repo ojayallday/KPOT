@@ -3,7 +3,9 @@ import Layout from "../components/layout";
 import { onLogin } from "../api/auth";
 import { useDispatch } from "react-redux";
 import { authenticateUser } from "../redux/slices/authSlice"
-import "./Login.css"; 
+import "./Login.css";
+
+
 
 const Login = () => {
   const [values, setValues] = useState({
@@ -35,7 +37,7 @@ const Login = () => {
 
   return (
     <Layout>
-      <div className="container mt-3 dark-mode">
+      <div className="container mt-5 dark-mode">
         <div className="row">
           <div className="col-md-6 col-sm-12">
             <img
@@ -44,7 +46,7 @@ const Login = () => {
               className="img-fluid"
             />
           </div>
-          <div className="col-md-6 col-sm-12">
+          <div className="col-md-6 col-sm-12 mt-3">
             <form onSubmit={(e) => onSubmit(e)}>
               <h1>Login</h1>
 
