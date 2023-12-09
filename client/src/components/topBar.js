@@ -1,6 +1,7 @@
 // TopBar.js
 
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 // Styled components
@@ -32,7 +33,9 @@ const TopBar = () => {
   return (
     <TopBarWrapper>
       {/* Left side content */}
-      <LeftContent></LeftContent>
+      <LeftContent>
+      <NavLink to='/dashboard'>Dashboard</NavLink>
+      </LeftContent>
 
       {/* Right side menu */}
       <RightMenu>

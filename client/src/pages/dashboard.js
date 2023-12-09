@@ -100,17 +100,17 @@ const Dashboard = () => {
       <Layout>
         <h2>{protectedData}</h2>
         <StyledDashboard>
-          <SummaryCard>
-            <h3>Total Projects</h3>
-            <p>{totalProjects}</p>
+          <SummaryCard style={{ backgroundColor: '#f0f0f0',width: '400px', height: '200px' }}>
+            <h3 >Total Projects</h3>
+            <p style={{ fontSize: '56px', fontFamily: 'Arial, sans-serif',marginTop: '18px' }}>{totalProjects}</p>
           </SummaryCard>
           {openStatusCounts &&
-            Object.entries(openStatusCounts).map(([status, count]) => (
-              <SummaryCard key={status}>
+            Object.entries(openStatusCounts).map(([status, count],index) => (
+              <SummaryCard key={status} style={{ backgroundColor: index % 2 === 0 ? '#ff0000' : '#7cfc00',width: '400px', height: '200px' }}>
                 <h3>{status}</h3>
-                <p>{count}</p>
-   
-              </SummaryCard>
+                <p style={{ fontSize: '56px', fontFamily: 'Arial, sans-serif', marginTop: '50px' }}>{count}</p>
+
+                </SummaryCard>
             ))}
             
             <ProjectsCard1/>
