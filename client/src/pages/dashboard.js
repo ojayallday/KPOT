@@ -58,8 +58,12 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const projectsData = await fetchProjectsInfo();
-        setProjects(projectsData || []); // Ensure projects is initialized as an array
+ 
+        const response = await fetchProjectsInfo();
+        // Access projects from the "projects" property in the response
+        const projectsData = response.success ? response.projects : [];
+        
+        setProjects(projectsData || []);
       } catch (error) {
         console.error('Error fetching projects:', error.message);
       }
@@ -74,14 +78,20 @@ const Dashboard = () => {
 
   // Calculate summary data
   const totalProjects = projects.length;
-  const openStatusCounts =
+  const openStatusCounts = 
     Array.isArray(projects) &&
     projects.reduce((acc, project) => {
       acc[project.open_status] = (acc[project.open_status] || 0) + 1;
       return acc;
+
+      
     }, {});
 
+    console.log('totalProjects:', totalProjects);
+    console.log('openStatusCounts:', openStatusCounts);
+
   return loading ? (
+    
     <Layout>
       <h1>Loading...</h1>
     </Layout>
