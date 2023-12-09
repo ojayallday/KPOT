@@ -6,6 +6,7 @@ const pool = new Pool({
     database: 'safpro',
     password: 'superadmin',
     port: 5433,
+
 })
 module.exports = {
     query: (text, params) => pool.query (text, params),
