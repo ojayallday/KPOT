@@ -1,0 +1,63 @@
+/* Login.css */
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Use Google Font 'Roboto' */
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .dark-mode {
+    background-color: #212529; /* Dark background color */
+    color: #fff; /* Light text color */
+  }
+  
+  .form-container {
+    background-color: #343a40; /* Dark background color for form */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    width: 400px;
+  }
+  
+  .form-container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .form-content {
+    padding: 20px;
+  }
+  
+  .form-label {
+    color: #61dafb; /* React blue color for labels */
+  }
+  
+  .form-control {
+    background-color: #495057; /* Input background color */
+    color: #fff; /* Input text color */
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #61dafb; /* React blue color for button */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #45aaf2; /* Hover color for button */
+  }
+  
