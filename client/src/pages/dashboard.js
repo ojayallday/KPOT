@@ -25,6 +25,11 @@ const SummaryCard = styled.div`
   text-align: center;
 `;
 
+const FlexContainer = styled.div`
+  display: flex;
+  
+`;
+
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -113,13 +118,20 @@ const Dashboard = () => {
                 </SummaryCard>
             ))}
             
-            <ProjectsCard1/>
-            <ProjectsCard2/>
-            <ProjectsCard3/>
-           
         </StyledDashboard>
+              <FlexContainer>
+                    <ProjectsCard1/>
+                    <ProjectsCard2/>
+                    <ProjectsCard3/>
+
+              </FlexContainer>
+      
+
       </Layout>
+
+     
     </div>
+  
   );
 };
 
