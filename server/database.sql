@@ -40,4 +40,6 @@ CREATE TABLE partners(
 CREATE TABLE msp(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255)
+
 );
+

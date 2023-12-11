@@ -141,6 +141,11 @@ exports.getaProject = async (req, res) => {
 //Get Closed Projects
 
 
+//Get Pending projects
+
+//Get Closed Projects
+
+
 //update a project
 
 exports.updateProject = async (req, res) => {
