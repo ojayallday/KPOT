@@ -1,3 +1,4 @@
+
 import Footer from './Footer'
 import Navbar from './navbar'
 import { Box } from '@mui/material';
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
     </div>
 
     
+
   )
 }
 

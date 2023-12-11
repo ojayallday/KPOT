@@ -1,12 +1,15 @@
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
+
 import Sidebar from './sidebar'
 import TopBar from './topBar'
+
 
 const Navbar = () => {
   const { isAuth } = useSelector((state) => state.auth)
 
   return (
+
     <nav className='navba navbar-light bg-light'>
      
 
@@ -20,6 +23,7 @@ const Navbar = () => {
 
         
         ) : (
+
           <div>
             <NavLink to='/login'>
               <span>Login</span>
@@ -32,6 +36,7 @@ const Navbar = () => {
         )}
     
     </nav>
+
   )
 }
 

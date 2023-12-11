@@ -18,6 +18,7 @@ import ListProjects from './components/listProjects'
 import GetUsers from './components/getUsers'
 import UsersTable from './components/UsersTable'
 
+
 const PrivateRoutes = () => {
   const { isAuth } = useSelector((state) => state.auth)
 
@@ -37,19 +38,20 @@ const App = () => {
         <Route path='/' element={<Home />} />
 
         <Route element={<PrivateRoutes />}>
+
           <Route path='/dashboard' element={<Dashboard />} /> 
           <Route path='/api/new-project' element={<CreateProject/>} />     
           <Route path='/api/projects' element={<ListProjects/>} /> 
           <Route path='/api/get-users' element={<GetUsers/>} />  
           </Route>
               ``
+
         <Route element={<RestrictedRoutes />}>
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>
-
   )
 }
 
