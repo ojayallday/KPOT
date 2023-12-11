@@ -136,6 +136,10 @@ exports.getaProject = async (req, res) => {
     console.log(error.message)
   }
 }
+//Get Pending projects
+
+//Get Closed Projects
+
 
 //Get Pending projects
 
@@ -143,7 +147,6 @@ exports.getaProject = async (req, res) => {
 
 
 //update a project
-
 
 exports.updateProject = async (req, res) => {
   const { id }= req.params;
