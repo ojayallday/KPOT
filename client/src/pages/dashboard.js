@@ -1,3 +1,4 @@
+
 // Dashboard.js
 
 import React, { useEffect, useState } from 'react';
@@ -95,6 +96,7 @@ const Dashboard = () => {
     console.log('totalProjects:', totalProjects);
     console.log('openStatusCounts:', openStatusCounts);
 
+
   return loading ? (
     
     <Layout>
@@ -103,6 +105,7 @@ const Dashboard = () => {
   ) : (
     <div>
       <Layout>
+
         <h2>{protectedData}</h2>
         <StyledDashboard>
           <SummaryCard style={{ backgroundColor: '#f0f0f0',width: '400px', height: '200px' }}>
